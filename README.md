@@ -21,15 +21,12 @@ Pemrosesan dan pencarian elemen HTML (DOM *subtree*) dalam aplikasi ini mengimpl
 ## Requirement Program & Instalasi 
 
 **Kebutuhan Eksekusi:**
-- **Docker Desktop / Docker Engine** (disarankan)
+- **Docker Desktop / Docker Engine**
 - **Docker Compose**
 
 ---
 
 ## Langkah-langkah Kompilasi & *Build*
-
-### Menggunakan Docker Compose 
-Metode ini adalah cara paling instan dan minim kendala, berkat arsitektur _Multi-stage build_ Golang dan _Reverse Proxy_ Nginx di sisi Frontend yang telah dirakit sempurna di konfigurasi kami.
 
 1. Buka Terminal / Command Prompt pada *root directory*.
 2. Nyalakan mesin Docker dengan eksekusi perintah:
