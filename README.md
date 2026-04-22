@@ -1,6 +1,6 @@
 # DOM Traversal & Search Engine
 
-Tugas Besar 2 IF2211 Strategi Algoritma - Aplikasi Web Pencarian Elemen pada Struktur Pohon DOM menggunakan algoritma **Breadth-First Search (BFS)** dan **Depth-First Search (DFS)**. Aplikasi ini dibangun secara _Fullstack_ dengan Golang murni sebagai _Backend_ (Parser & Traversal Engine) dan Vanilla Web (HTML/JS/CSS) sebagai _Frontend_ UI/UX Premium.
+Tugas Besar 2 IF2211 Strategi Algoritma - Aplikasi Web Pencarian Elemen pada Struktur Pohon DOM menggunakan algoritma **Breadth-First Search (BFS)** dan **Depth-First Search (DFS)**. Aplikasi ini dibangun secara _Fullstack_ dengan Golang murni sebagai _Backend_ (Parser & Traversal Engine) dan Vanilla Web (HTML/JS/CSS) sebagai _Frontend_ UI/UX.
 
 ## Penjelasan Algoritma yang Diimplementasikan
 
