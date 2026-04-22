@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tubes 2 STIMA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <div class="app-container">
+    <header class="glass-panel main-header">
+      <div class="logo-area">
+        <h1>Tubes 2 <span>STIMA</span></h1>
+      </div>
+    </header>
+
+    <main>
+      <section class="glass-panel input-section">
+        <form id="search-form">
+          <div class="mode-toggle">
+             <label class="radio-label">
+                <input type="radio" name="input_mode" value="url" checked> Scrape URL
+             </label>
+             <label class="radio-label">
+                <input type="radio" name="input_mode" value="html"> Raw HTML Text
+             </label>
+          </div>
+
+          <div class="input-group" id="url-group">
+            <label for="url">Target URL</label>
+            <input type="url" id="url" placeholder="https://example.com">
+          </div>
+          
+          <div class="input-group hidden" id="html-group">
+            <label for="html-text">Raw HTML Text</label>
+            <textarea id="html-text" rows="5" placeholder="&lt;html&gt;...&lt;/html&gt;"></textarea>
+          </div>
+          
+          <div class="row layout-3">
+            <div class="input-group">
+              <label for="selector">CSS Selector</label>
+              <input type="text" id="selector" placeholder="div#header.btn" required>
+            </div>
+            <div class="input-group">
+              <label for="algo">Algorithm</label>
+              <div class="custom-select-wrapper">
+                <select id="algo" required>
+                  <option value="BFS">Breadth-First Search</option>
+                  <option value="DFS">Depth-First Search</option>
+                </select>
+              </div>
+            </div>
+             <div class="input-group">
+              <label for="limit">Top N Results</label>
+              <input type="number" id="limit" placeholder="All occurrences" min="1">
+            </div>
+          </div>
+
+          <button type="submit" class="primary-btn" id="submit-btn">
+            <span class="btn-text">Execute Traversal</span>
+            <div class="btn-loader hidden"></div>
+          </button>
+        </form>
+      </section>
+
+      <section class="results-area hidden" id="results-area">
+        <div class="metrics-grid">
+          <div class="glass-panel metric-card">
+            <div class="metric-title">Execution Time</div>
+            <div class="metric-value"><span id="metric-time">0</span> ms</div>
+          </div>
+          <div class="metric-card glass-panel accent">
+            <div class="metric-title">Nodes Evaluated</div>
+            <div class="metric-value" id="metric-evaluated">0</div>
+          </div>
+          <div class="metric-card glass-panel success">
+            <div class="metric-title">Results Found</div>
+            <div class="metric-value" id="metric-found">0</div>
+          </div>
+          <div class="metric-card glass-panel warning">
+            <div class="metric-title">Max Tree Depth</div>
+            <div class="metric-value" id="metric-depth">0</div>
+          </div>
+        </div>
+
+        <div class="split-view">
+           <div class="glass-panel tree-section">
+            <h2>Full DOM Tree Explorer</h2>
+            <div class="tree-container" id="tree-container">
+            </div>
+          </div>
+  
+          <div class="right-pane">
+            <div class="glass-panel match-section">
+              <h2>Matched Elements</h2>
+              <ul class="match-list" id="match-list">
+              </ul>
+            </div>
+            
+            <div class="glass-panel visualization-section">
+              <h2>Traversal Path Log (<span id="algo-used"></span>)</h2>
+              <div class="traversal-container" id="traversal-container">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
