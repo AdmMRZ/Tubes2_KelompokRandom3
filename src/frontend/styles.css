@@ -439,3 +439,105 @@ details > summary:hover { background: rgba(255, 255, 255, 0.05); }
   color: var(--success-glow);
   font-size: 0.8rem;
 }
+
+.traversal-anim-container {
+  height: 450px;
+  overflow: hidden;
+}
+
+.anim-step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 3px 4px;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.anim-step--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.anim-step-connector {
+  font-size: 0.7rem;
+  flex-shrink: 0;
+  color: var(--accent-glow);
+}
+
+.anim-step-connector.is-leaf {
+  color: var(--success-glow);
+}
+
+.anim-step-tag {
+  color: var(--primary-neon);
+  font-size: 0.8rem;
+}
+
+.anim-step--more {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  justify-content: center;
+}
+
+.anim-step.depth-1  { padding-left: 1.25rem; }
+.anim-step.depth-2  { padding-left: 2.5rem; }
+.anim-step.depth-3  { padding-left: 3.75rem; }
+.anim-step.depth-4  { padding-left: 5rem; }
+.anim-step.depth-5  { padding-left: 6.25rem; }
+.anim-step.depth-6  { padding-left: 7.5rem; }
+.anim-step.depth-7  { padding-left: 8.75rem; }
+.anim-step.depth-8  { padding-left: 10rem; }
+.anim-step.depth-9  { padding-left: 11.25rem; }
+.anim-step.depth-10 { padding-left: 12.5rem; }
+
+/* === D3 Tree Graph === */
+.tree-graph-svg {
+  display: block;
+  cursor: grab;
+  border-radius: 8px;
+}
+
+.tree-graph-svg:active { cursor: grabbing; }
+
+.tree-graph-link {
+  fill: none;
+  stroke: var(--panel-border);
+  stroke-width: 1.5;
+  stroke-opacity: 0.9;
+}
+
+.tree-graph-node { cursor: pointer; }
+
+.tree-graph-circle {
+  stroke-width: 2;
+}
+
+.tree-graph-circle.node-internal {
+  fill: var(--accent-glow);
+  stroke: var(--accent-glow);
+}
+
+.tree-graph-circle.node-collapsed {
+  fill: var(--bg-darker);
+  stroke: var(--accent-glow);
+}
+
+.tree-graph-circle.node-leaf {
+  fill: var(--success-glow);
+  stroke: var(--success-glow);
+}
+
+.tree-graph-node:hover .tree-graph-circle {
+  filter: brightness(1.5);
+}
+
+.tree-graph-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  fill: var(--text-muted);
+  pointer-events: none;
+  user-select: none;
+}
